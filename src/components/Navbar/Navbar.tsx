@@ -3,7 +3,8 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import logoLeft from "../../assets/MUN_LOGO.png";
-import logoRight from "../../assets/MUN_LOGO.png";
+import logoRight from "../../assets/srm_logo.png";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -25,7 +26,7 @@ const Navbar = () => {
             <Image
               src={logoLeft}
               alt="Left Logo"
-              className="h-10 w-auto object-contain"
+              className="object-contain"
               width={100}
               height={100}
             />
@@ -34,14 +35,14 @@ const Navbar = () => {
           {/* Desktop Navigation Links - Center */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
-                className=" hover:text-black transition-colors duration-200 font-medium"
-                style={{ color: "var(--primary)" }}
+                className=" text-neutral-500 hover:text-[#efdb9e] transition-colors duration-200 font-medium"
+                // style={{ color: "var(--primary)" }}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -50,7 +51,7 @@ const Navbar = () => {
             <Image
               src={logoRight}
               alt="Right Logo"
-              className="hidden md:block h-10 w-auto object-contain"
+              className="hidden md:block object-contain"
               width={100}
               height={100}
             />
